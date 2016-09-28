@@ -1,0 +1,11 @@
+<div ng-controller="UserController" layout layout-align="center">
+    <table>
+		<tr ng-repeat="user in chatUsers">
+			<td>{{user.username}}</td>
+			<td>{{user.chat}}</td>
+			<td>
+				<button ui-sref="chat(user.chat.id)">Chat with User</button>
+			</td>
+		</tr>
+	</table>
+</div>    

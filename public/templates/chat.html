@@ -1,0 +1,11 @@
+<div ng-controller="ChatController">
+	<h1>Chat between {{loggedInUser}} and {{recipientUser}}</h1>
+	<div>
+		<p ng-repeat="message in messages"></p>
+	</div>
+	<form ng-submit="createMessage()">
+		<textarea placeholder="Type Message Here..."></textarea>
+		<button type="submit">Send Message</button>
+	</form>
+</div>
+

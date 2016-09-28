@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<title>Kandi's Chat</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/css/site.css">
+</head>
+<body>
+	<h1>Welcome</h1>
+	<button ui-sref="RegisterOrLogin">Click to Start</button>
+
+<ui-view></ui-view>
+
+
+	<!-- External Libs -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-aria.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.0.3/angular-material.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-animate.min.js"></script>
+
+	<!-- Global Sources -->
+	<script src="/javascript/app.js"></script>
+
+	<!-- Factories -->
+	<script src="/javascript/services/UserFactory.js"></script>
+	<script src="/javascript/services/ChatFactory.js"></script>
+
+	<!-- Controllers -->
+	<script src="/javascript/controllers/UserController.js"></script>
+	<script src="/javascript/controllers/ChatController.js"></script>
+
+</body>
+</html>
