@@ -1,11 +1,25 @@
-<div ng-controller="ChatController">
-	<h1>Chat between {{loggedInUser}} and {{recipientUser}}</h1>
-	<div>
-		<p ng-repeat="message in messages"></p>
+<div class="container" ng-controller="ChatController" layout layout-align="center">
+	<div class="row m-t-3">
+		<div class="col-sm-12">
+			<h3>Chat between {{loggedInUser}} and {{recipientUser}}</h3>
+			<div class="card p-a-1">
+				<!--<p ng-repeat="message in messages">{{message}}</p>-->
+				<p>bdhfdhfdhdfhd</p>
+				<p>bdhfdhfdhdfhd</p>
+				<p>bdhfdhfdhdfhd</p>
+				<p>bdhfdhfdhdfhd</p>
+				<p>bdhfdhfdhdfhd</p>
+			</div>
+		</div>
+		<div class="col-sm-12 m-t-1">
+			<form ng-submit="createMessage()">
+			<md-input-container class="md-block">
+				<label>Type message here...</label>
+				<textarea ng-model="user.biography" md-maxlength="300" rows="5" md-select-on-focus></textarea>
+			</md-input-container>
+				<md-button class="md-raised" type="submit">Send</md-button>
+			</form>
+		</div>
 	</div>
-	<form ng-submit="createMessage()">
-		<textarea placeholder="Type Message Here..."></textarea>
-		<button type="submit">Send Message</button>
-	</form>
 </div>
 

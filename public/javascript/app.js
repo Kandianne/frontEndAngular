@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-  angular.module('app', ['ui.router'])
+  angular.module('app', ['ui.router', 'ngMaterial'])
     .config(Config);
 
   function Config($stateProvider, $urlRouterProvider) {
@@ -8,12 +8,12 @@
       .state('Home', {
       url: '/'
       })
-      .state('RegisterOrLogin', {
-        url: '/',
-        templateUrl: '/templates/registerOrLogin.html'
+      .state('Register', {
+        url: '/register',
+        templateUrl: '/templates/register.html'
       })
       .state('Users', {
-        url: '/users/',
+        url: '/users',
         templateUrl: '/templates/users.html'
       }).state('Chat', {
       url: '/chat/:id',

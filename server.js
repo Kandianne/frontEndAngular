@@ -3,7 +3,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var mongoose = require('mongoose');
-var env = require('dotenv').config();
 var port = process.env.PORT || 3000;
 
 app.set('views', './views');
@@ -15,20 +14,20 @@ app.set('view options', {
 	layout: false
 });
 
-//-----------------------CONNECTION TO MONGOOSE--------------------------------------------------------
+//-----------------------CONNECTION TO MONGO DATABASE-----------------------
+// mongoose.connect(process.env.DATABASE_NAME, function(err) {
+// 	if(err) return console.log("No connection");
+// 	else{
+// 		console.log("Success! You are connected to the database")
+// 	}
+// });
 
-mongoose.connect(process.env.MONGOLAB_URI, function(err) {
-	if(err) return console.log("No connection");
-	else{
-		console.log("Success! You are connected to the database")
-	}
-});
-
-//======================REQUIRING SCHEMAS=================================
+//======================SCHEMAS=================================
 require("./models/UserModel");
+require("./models/ChatModel");
 
-//======================REQUIRING ROUTES=================================
-var candyRoutes = require('./routes/userRoutes');
+//======================ROUTES=================================
+var userRoutes = require('./routes/userRoutes');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -38,7 +37,7 @@ app.get('/', function(req, res) {
 });
 
 //======================ROUTES TO USE=================================
-app.use('/api/candy/', candyRoutes);
+app.use('/api/user/', userRoutes);
 
 
 module.exports = app.listen(port, function() {

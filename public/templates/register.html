@@ -1,0 +1,22 @@
+<div class="container" ng-controller="UserController" layout layout-align="center">
+    <div class="row m-a-3 col-sm-10">
+        <div class="card m-a-3" layout layout-align="center">
+            <form class="p-a-3 m-x-1" ng-submit="register()">
+                <h3 class="m-b-1">Register</h3>
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label>Username</label>
+                    </div>
+                        <input class="col-sm-5" type="text" ng-model="newUser.username" required>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-2">
+                        <label>Password</label>
+                    </div>
+                        <input class="col-sm-5" type="password" ng-model="newUser.password" required>
+                </div>
+                <md-button class="md-raised" type="submit">Finish</md-button>
+            </form>
+        </div>
+    </div>
+</div>
