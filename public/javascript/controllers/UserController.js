@@ -13,6 +13,7 @@
 				if(err) {
 					return console.log(err);
 				}
+				console.log(res);
 				$scope.loggedInUser = res;
 				getChatUsers();
 				$state.go('Users');
@@ -20,11 +21,11 @@
 		};
 
 		$scope.login = function () {
-			console.log($scope.user);
 			UserFactory.login($scope.user).then(function(res, err) {
 				if(err) {
 					return console.log(err);
 				}
+				console.log(res);
 				$scope.loggedInUser = res;
 				getChatUsers();
 				$state.go('Users');
@@ -36,6 +37,7 @@
 				if(err) {
 					return console.log(err);
 				}
+				console.log('users', res);
 				$scope.chatUsers = res;
 				$state.go('Users');
 			})

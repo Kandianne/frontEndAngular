@@ -20,13 +20,19 @@
 			getMessages();
 		}
 
+
 		var getMessages = function () {
 			UserFactory.getMessages($stateParams.id).then(function(res, err) {
 				if(err) {
 					return console.log(err);
 				}
+
+				console.log($scope.messages);
 				$scope.messages = res;
 			})
-		}
+		};
+
+		getMessages();
+
 	}
 })();

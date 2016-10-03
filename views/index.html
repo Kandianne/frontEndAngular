@@ -18,7 +18,8 @@
     </ul>
     <form class="form-inline pull-xs-right" ng-submit="login()">
         <input ng-model="user.username" class="form-control" type="text" placeholder="Username..." required>
-        <input ng-model="user.password" class="form-control" type="text" placeholder="Password..." required>
+        <input ng-model="user.email" class="form-control" type="email" placeholder="Email..." required>
+        <input ng-model="user.password" class="form-control" type="password" placeholder="Password..." required>
         <md-button type="submit">Login</md-button>
         <md-button ui-sref="Register">Register</md-button>
     </form>
@@ -44,8 +45,8 @@
 <script src="/javascript/app.js"></script>
 
 <!-- Factories -->
-<script src="/javascript/services/UserFactory.js"></script>
-<script src="/javascript/services/ChatFactory.js"></script>
+<script src="/javascript/factories/UserFactory.js"></script>
+<script src="/javascript/factories/ChatFactory.js"></script>
 
 <!-- Controllers -->
 <script src="/javascript/controllers/UserController.js"></script>
