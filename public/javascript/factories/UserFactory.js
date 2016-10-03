@@ -6,7 +6,7 @@
   function UserFactory($http, $q) {
     var thisFactory = {};
 
-    var rootUrl ="http://192.168.1.133:1337"; // target backend server url
+    var rootUrl ="http://104.236.80.163:1337"; // target backend server url
     
     thisFactory.register = function (newUser) {
       var q = $q.defer();
