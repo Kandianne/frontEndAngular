@@ -3,8 +3,8 @@
 	angular.module('app')
 	.controller('UserController', UserController);
 
-	function UserController($scope, $state, UserFactory) {
-		$scope.newUser = {};
+	function UserController($scope, $state, UserFactory, $localStorage) {
+    $scope.newUser = {};
 		$scope.user = {};
 
 		$scope.register = function () {
@@ -26,7 +26,8 @@
 					return console.log(err);
 				}
 				console.log(res);
-				$scope.loggedInUser = res;
+				$scope.loggedInUser = res.user;
+				$localStorage.user = res.user;
 				getChatUsers();
 				$state.go('Users');
 			})
@@ -43,5 +44,6 @@
 			})
 		}
 
-	}
+
+  }
 })();

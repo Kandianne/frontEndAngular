@@ -1,9 +1,13 @@
 (function () {
   'use strict';
-  angular.module('app', ['ui.router', 'ngMaterial'])
+  angular.module('app', ['ui.router', 'ngMaterial','ngStorage'])
     .config(Config);
 
-  function Config($stateProvider, $urlRouterProvider) {
+  function Config($stateProvider, $urlRouterProvider,$httpProvider) {
+    $httpProvider.defaults.useXDomain = true;
+    $httpProvider.defaults.withCredentials = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    
     $stateProvider
       .state('Home', {
       url: '/'
