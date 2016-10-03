@@ -43,8 +43,6 @@
 				$state.go('Users');
 			})
 		}
-    
-    getChatUsers();
 
 
   }
