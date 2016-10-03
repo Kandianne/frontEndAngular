@@ -1,12 +1,10 @@
 <div ng-controller="UserController" layout layout-align="center">
     <table class="m-t-3">
-		<!--<tr ng-repeat="user in chatUsers">-->
-			<!--<td>{{user.username}}</td>-->
-			<!--<td>{{user.chat}}</td>-->
-		<tr>
-			<td>Chatuser</td>
-			<td>
-				<md-button class="md-icon-button" ui-sref="Chat(user.chat.id)">
+		<tr ng-repeat="user in chatUsers">
+			<td>{{user.username}}</td>
+			<td>{{user.email}}</td>
+		<td>
+				<md-button class="md-icon-button" ui-sref="Chat">
 					<i class="zmdi zmdi-comments"></i>
 				</md-button>
 			</td>

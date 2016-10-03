@@ -13,8 +13,8 @@
 				if(err) {
 					return console.log(err);
 				}
-				console.log(res);
 				$scope.loggedInUser = res;
+				$localStorage.user = res.user;
 				getChatUsers();
 				$state.go('Users');
 			})
@@ -38,10 +38,12 @@
 				if(err) {
 					return console.log(err);
 				}
-				console.log('users', res);
 				$scope.chatUsers = res;
-				$state.go('Users');
 			})
+		};
+
+		if ($localStorage.user) {
+			getChatUsers();
 		}
 
 

@@ -3,36 +3,31 @@
 	angular.module('app')
 	.controller('ChatController', ChatController);
 
-	function ChatController($scope, $state, $stateParams) {
-		$scope.newMessage = {};
+	function ChatController($scope, ChatFactory, $localStorage) {
+		$scope.chat = {};
 
-		$scope.createMessage = function () {
-			console.log($scope.user);
-			UserFactory.createMessage($scope.newMessage).then(function(res, err) {
+		console.log($localStorage.user.id)
+		$scope.getChatRoom = function () {
+      ChatFactory.getChatRoom().then(function(res, err) {
 				if(err) {
 					return console.log(err);
 				}
-				getMessages();
+				$scope.room = res.chats;
 			})
 		};
 
-		if($stateParams.id) {
-			getMessages();
-		}
+    $scope.createMessage = function () {
+      $scope.chat.senderUser = $localStorage.user.id;
+      ChatFactory.createMessage($scope.chat).then(function(res, err) {
+        if(err) {
+          return console.log(err);
+        }
+        $scope.getChatRoom();
+        $scope.chat = null;
+      })
+    };
 
-
-		var getMessages = function () {
-			UserFactory.getMessages($stateParams.id).then(function(res, err) {
-				if(err) {
-					return console.log(err);
-				}
-
-				console.log($scope.messages);
-				$scope.messages = res;
-			})
-		};
-
-		getMessages();
+    $scope.getChatRoom();
 
 	}
 })();

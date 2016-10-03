@@ -20,7 +20,7 @@
         url: '/users',
         templateUrl: '/templates/users.html'
       }).state('Chat', {
-      url: '/chat/:id',
+      url: '/chat',
       templateUrl: '/templates/chat.html'
     });
     $urlRouterProvider.otherwise('/');
